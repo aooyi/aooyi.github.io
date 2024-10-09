@@ -19,19 +19,22 @@
   <meta name="author" content="ayi">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="http://example.com/2024/10/09/test/index.html">
+    <meta name="description" content="1.独热编码 独热编码   即使用一个词表大小的向量表示一个词，对于词表的第 i 个词，在这个向量的第 i 维设置为1，其余为度设置为0。          在该向量中,词表中第i个词在第i维上被设置为1,其余维均为0。这种表示被称为词的独热表示或独热编码(One-hot Encoding)。         独热表示的一个主要问题就是不同词使用完全不同的向量进行表示，这会导致即使两个词在语义上很">
+<meta property="og:type" content="article">
+<meta property="og:title" content="语义向量化的发展">
+<meta property="og:url" content="http://example.com/2024/10/09/%E8%AF%AD%E4%B9%89%E5%90%91%E9%87%8F%E5%8C%96%E7%9A%84%E5%8F%91%E5%B1%95/index.html">
 <meta property="og:site_name" content="Ayi&#39;s blog">
+<meta property="og:description" content="1.独热编码 独热编码   即使用一个词表大小的向量表示一个词，对于词表的第 i 个词，在这个向量的第 i 维设置为1，其余为度设置为0。          在该向量中,词表中第i个词在第i维上被设置为1,其余维均为0。这种表示被称为词的独热表示或独热编码(One-hot Encoding)。         独热表示的一个主要问题就是不同词使用完全不同的向量进行表示，这会导致即使两个词在语义上很">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-10-09T09:31:20.000Z">
-<meta property="article:modified_time" content="2024-10-09T12:33:32.537Z">
+<meta property="article:published_time" content="2024-10-09T12:53:44.000Z">
+<meta property="article:modified_time" content="2024-10-09T12:55:15.251Z">
 <meta property="article:author" content="ayi">
+<meta property="article:tag" content="NLP">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>test - Ayi&#39;s blog</title>
+  <title>语义向量化的发展 - Ayi&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="test"></span>
+            <span id="subtitle" data-typed-text="语义向量化的发展"></span>
           
         </div>
 
@@ -208,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-10-09 17:31" pubdate>
-          2024年10月9日 下午
+        <time datetime="2024-10-09 20:53" pubdate>
+          2024年10月9日 晚上
         </time>
       </span>
     
@@ -220,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          1.5k 字
         
       </span>
     
@@ -231,7 +234,7 @@
         
         
         
-          1 分钟
+          13 分钟
         
       </span>
     
@@ -268,12 +271,115 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">test</h1>
+            <h1 id="seo-header">语义向量化的发展</h1>
             
             
               <div class="markdown-body">
                 
-                
+                <h3 id="1-独热编码"><a href="#1-独热编码" class="headerlink" title="1.独热编码"></a>1.独热编码</h3><ul>
+<li><strong>独热编码</strong></li>
+</ul>
+<blockquote>
+<p><strong><u>即使用一个词表大小的向量表示一个词，对于词表的第 i 个词，在这个向量的第 i 维设置为1，其余为度设置为0。</u></strong></p>
+</blockquote>
+<p>        在该向量中,词表中第i个词在第i维上被设置为1,其余维均为0。这种表示被称为词<br>的独热表示或独热编码(One-hot Encoding)。</p>
+<p>        独热表示的一个主要问题就是不同词使用完全不同的向量进行表示，<strong>这会导致即使两<br>个词在语义上很相似，但是通过余弦函数来度量它们之间的相似度时值却为0</strong>。另外,当<br>应用于基于机器学习的方法时，独热模型会导致<strong>数据稀疏(Data Sparsity)问题</strong>。例<br>如，假设在训练数据中只见过“漂亮”，在测试数据中出现了“美丽”，虽然它们之间很<br>相似，但是系统仍然无法恰当地对“美丽”进行加权。由于数据稀疏问题，导致当训练数<br>据规模有限时，很多语言现象没有被充分地学习到。</p>
+<ul>
+<li><strong>数据稀疏问题</strong></li>
+</ul>
+<blockquote>
+<p><strong><u>是指在某些特定情况下，数据集中存在大量缺失或者零值的数据，导致数据不完整、信息不完全的问题。</u></strong></p>
+</blockquote>
+<hr>
+<h3 id="2-词的分布式表达"><a href="#2-词的分布式表达" class="headerlink" title="2.词的分布式表达"></a>2.词的分布式表达</h3><ul>
+<li><strong>分布式语义假设</strong></li>
+</ul>
+<blockquote>
+<p><strong><u>词的含义可由其上下文的分布进行表示</u></strong></p>
+</blockquote>
+<p>        人们在阅读过程中遇到从未见过的词时，通常会根据上下文来推断其含义以及相关属性。基于这种思想，John Rupert Firth于1957年提出了分布式语义假设。基于该思想，可以利用大规模的未标注文本数据，根据每个词的上下文分布对词进行表示。当然，<strong>分布式语义假设仅仅提供了一种语义建模的思想</strong>。具体到表示形式和上下文的选择，以及如何利用上下文的分布特征，都是需要解决的问题。</p>
+<ul>
+<li> <strong>一种可行的分布式表达的构造方法：</strong></li>
+</ul>
+<blockquote>
+<p><strong>① 对文档分词，假设分词结果共有 n 个词</strong></p>
+<p><strong>② 用这 n 个词构造一个n * n的表格</strong></p>
+<p><strong>③</strong> <u><strong>表中的每一项代表一个词与另一个词（上下文）在同一个句子中的共现频次 ，每个词与自身的共现频次设置为0。</strong></u></p>
+<p><strong>④</strong> <u><strong>表中的每一行代表一个词的向量。通过计算两个向量之间的余弦函数，就可以计算两个词的相似度。</strong></u></p>
+</blockquote>
+<ul>
+<li><strong>分布式表达存在的问题</strong></li>
+</ul>
+<blockquote>
+<p><strong>① <u>高频词误导计算结果。有些在每个句子中都存在的高频词会导致两个不相干的词在分布式表达中产生语义联系。</u></strong></p>
+<p><strong>② <u>高阶关系难以表达。A 与 B，B 与 C，C 与 D，难以表达A 与 D的关系</u>。</strong></p>
+<p><strong>③ <u>依然存在一定程度的数据稀疏问题。</u></strong></p>
+</blockquote>
+<ul>
+<li><strong>点互信息解决高频词的问题</strong></li>
+</ul>
+<blockquote>
+<p><strong><u>如果一个词与很多词共现，则降低其权重；反之，如果一个词只与个别词共现，则提高其权重。</u></strong></p>
+</blockquote>
+<p>    计算公式：</p>
+<p>                                        \mathrm{PMI}(w,c)&#x3D;\log_2\frac{P(w,c)}{P(w)P(c)}</p>
+<p>    其中，P(w, c)、P(w)、P(c) <strong><u>分别是 w 与 c 的共现概率，以及 w 和 c 分别出现的概率。</u></strong></p>
+<ul>
+<li><strong>最大似然估计</strong></li>
+</ul>
+<blockquote>
+<p><strong><u>利用已知的样本结果信息，反推最具有可能（最大概率）导致这些样本结果出现的模型参数值</u></strong></p>
+</blockquote>
+<ul>
+<li><strong>奇异值分解解决高阶关系无法反映的问题</strong></li>
+</ul>
+<blockquote>
+<p>截断奇异值分解、潜在语义分析、潜在语义索引</p>
+</blockquote>
+<ul>
+<li><strong>分布式表达的问题</strong></li>
+</ul>
+<blockquote>
+<p><u><strong>① 当共现矩阵规模较大时，奇异值分解的运行速度非常慢；</strong></u></p>
+<p><strong><u>② 如果想在原来语料库的基础上增加更多的数据，则需要重新运行奇异值分解算法，代价非常高；</u></strong></p>
+<p><strong><u>③ 分布式表示只能用于表示比较短的单元，如词或短语等，如果待表示的单元比较长，如段落、句子等，由于与其共现的上下文会非常少，则无法获得有效的分布式表示；</u></strong></p>
+<p><strong><u>④ 分布式表示一旦训练完成，则无法修改</u></strong></p>
+</blockquote>
+<hr>
+<h3 id="3-词嵌入技术"><a href="#3-词嵌入技术" class="headerlink" title="3.词嵌入技术"></a>3.词嵌入技术</h3><ul>
+<li><strong>词嵌入</strong></li>
+</ul>
+<blockquote>
+<p>与词的分布式表示类似，**<u>词嵌入表示（Word Embedding）也使用一个连续、低维、稠密的向量来表示词，经常直接简称为词向量，但与分布式表示不同之处在于其赋值方式。</u>** 在词的分布式表示中，向量值是通过对语料库进行统计得到的，然后再经过点互信息、奇异值分解等变换，一旦确定则无法修改。</p>
+<p><strong><u>而词向量中的向量值，是随着目标任务的优化过程自动调整的，也就是说，可以将词向量中的向量值看作模型的参数。</u></strong></p>
+</blockquote>
+<hr>
+<h3 id="4-词袋模型"><a href="#4-词袋模型" class="headerlink" title="4.词袋模型"></a>4.词袋模型</h3><ul>
+<li><strong>词袋模型</strong></li>
+</ul>
+<blockquote>
+<p><strong><u>假设文本中的词语是没有顺序的集合，将文本中的全部词所对应的向量表示（既可以是独热表示，也可以是分布式表示或词向量）相加，即构成了文本的向量表示。</u></strong></p>
+<p>如在使用独热表示时，文本向量表示的每一维恰好是相应的词在文本中出现的次数。</p>
+</blockquote>
+<p>(为什么叫词袋呢？大概意思就是只是把一堆词放在了一起，不考虑顺序)</p>
+<ul>
+<li><strong>词袋模型的问题</strong></li>
+</ul>
+<blockquote>
+<p><strong><u>① 没有考虑词的顺序信息，即使词序不同，词袋表示的结果也是一样的；</u></strong></p>
+<p><strong><u>② 无法融入上下文信息。比如要表示“不喜欢”，只能将两个词的向量相加，无法进行更细致的语义操作。</u></strong></p>
+</blockquote>
+<h3 id="5-循环神经网络"><a href="#5-循环神经网络" class="headerlink" title="5.循环神经网络"></a>5.循环神经网络</h3><ul>
+<li><strong>循环神经网络</strong></li>
+</ul>
+<blockquote>
+<p><strong><u>主要是为了捕捉长文本的信息，防止遗忘，同时还能有位序信息。</u></strong></p>
+<p><strong><u>但是反向传播的时候会出现梯度消失和梯度爆炸的现象，可以通过截断操作解决。</u></strong></p>
+</blockquote>
+<ul>
+<li><strong>长短时记忆网络</strong></li>
+</ul>
+
                 
               </div>
             
@@ -281,6 +387,13 @@
             <div>
               <div class="post-metas my-3">
   
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/NLP/" class="print-no-link">#NLP</a>
+      
+    </div>
   
 </div>
 
@@ -290,8 +403,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>test</div>
-      <div>http://example.com/2024/10/09/test/</div>
+      <div>语义向量化的发展</div>
+      <div>http://example.com/2024/10/09/语义向量化的发展/</div>
     </div>
     <div class="license-meta">
       
@@ -335,18 +448,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/10/09/%E8%AF%AD%E4%B9%89%E5%90%91%E9%87%8F%E5%8C%96%E7%9A%84%E5%8F%91%E5%B1%95/" title="语义向量化的发展">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">语义向量化的发展</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/10/09/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2024/10/09/test/" title="test">
+                        <span class="hidden-mobile">test</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
